@@ -2,10 +2,11 @@ from sqlmodel import SQLModel, Session, create_engine
 
 from models import Profession, Skill, SkillWarriorLink, Warrior
 
-with open('.pgpass', 'r') as pass_file:
-    password = pass_file.read()
+import os
+from dotenv import load_dotenv
 
-db_url = f"postgresql://postgres:{password}@localhost/warriors_db"
+load_dotenv()
+db_url = os.getenv('DB_ADMIN')
 engine = create_engine(db_url, echo=True)
 
 
