@@ -1,24 +1,13 @@
-from typing import TypeVar
-from sqlmodel import SQLModel, Field, Relationship
+from sqlmodel import Field, Relationship
 from datetime import datetime
 
-# Define types for Generic
-InputModel = TypeVar('InputModel', bound=SQLModel)
-OutputModel = TypeVar('OutputModel', bound=SQLModel)
+from models.default import NotificationDefault, PriorityDefault, ScheduleDefault, ScheduleTaskDefault, TaskDefault, TimeEntryDefault, UserDefault
 
 # Associative table
-class ScheduleTaskDefault(SQLModel):
-    schedule_id: int | None = Field(default=None, foreign_key="schedule.id", primary_key=True)
-    task_id: int | None = Field(default=None, foreign_key="task.id", primary_key=True)
-
 class ScheduleTask(ScheduleTaskDefault, table=True):
     added_at: datetime = Field(default_factory=datetime.utcnow)
 
 # User table
-class UserDefault(SQLModel):
-    username: str
-    email: str
-
 class UserInner(UserDefault):
     tasks: list["Task"] | None = None
     schedules: list["Schedule"] | None = None
@@ -31,9 +20,6 @@ class User(UserDefault, table=True):
                                                sa_relationship_kwargs={"cascade": "delete"})
 
 # Priority table
-class PriorityDefault(SQLModel):
-    name: str
-
 class PriorityInner(PriorityDefault):
     tasks: list["Task"] | None = None
 
@@ -43,12 +29,6 @@ class Priority(PriorityDefault, table=True):
                                        sa_relationship_kwargs={"cascade": "delete"})
 
 # Task table
-class TaskDefault(SQLModel):
-    description: str
-    deadline: datetime
-    priority_id: int | None = Field(default=None, foreign_key="priority.id")
-    user_id: int | None = Field(default=None, foreign_key="user.id")
-
 class TaskInner(TaskDefault):
     priority: Priority | None = None
     user: list[User] | None = None
@@ -70,12 +50,6 @@ class Task(TaskDefault, table=True):
 
 
 # TimeEntry table
-class TimeEntryDefault(SQLModel):
-    task_id: int | None = Field(default=None, foreign_key="task.id")
-    start_time: datetime
-    end_time: datetime
-    duration: int
-
 class TimeEntryInner(TimeEntryDefault):
     task: Task | None = None
 
@@ -84,10 +58,6 @@ class TimeEntry(TimeEntryDefault, table=True):
     task: Task | None = Relationship(back_populates="time_entries")
 
 # Schedule table
-class ScheduleDefault(SQLModel):
-    user_id: int | None = Field(default=None, foreign_key="user.id")
-    date: datetime
-
 class ScheduleInner(ScheduleDefault):
     user: User | None = None
     tasks: list[Task] | None = None
@@ -100,11 +70,6 @@ class Schedule(ScheduleDefault, table=True):
                                      sa_relationship_kwargs={"cascade": "delete"})
 
 # Notification table
-class NotificationDefault(SQLModel):
-    task_id: int | None = Field(default=None, foreign_key="task.id")
-    message: str
-    sent_at: datetime
-
 class NotificationInner(NotificationDefault):
     task: Task | None = None
 

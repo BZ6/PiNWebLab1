@@ -1,6 +1,6 @@
 from sqlmodel import SQLModel, Session, create_engine
 
-from models import User, Priority, Task, ScheduleTask, TimeEntry, Schedule, Notification
+from models.models import User, Priority, Task, ScheduleTask, TimeEntry, Schedule, Notification
 
 import os
 from dotenv import load_dotenv

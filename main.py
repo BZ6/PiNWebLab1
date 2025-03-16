@@ -1,58 +1,16 @@
-from typing import Type, TypedDict, Generic
-from fastapi import Depends, FastAPI, HTTPException
-from sqlmodel import Session, select
+from fastapi import Depends, FastAPI
 
+from api.generic import create_object, read_object_list, delete_object, read_object, update_object, Response
+from api.schedule_tasks import create_st, delete_st, get_st
 from connection import init_db, get_session
-from models import NotificationDefault, NotificationInner, PriorityInner, ScheduleDefault, ScheduleInner, TaskDefault, PriorityDefault, TaskInner, TimeEntryDefault, TimeEntryInner, UserDefault, InputModel, OutputModel, UserInner
-from models import User, Priority, Task, ScheduleTask, TimeEntry, Schedule, Notification
+from models.default import NotificationDefault, ScheduleDefault, TaskDefault, PriorityDefault, TimeEntryDefault, UserDefault
+from models.models import NotificationInner, PriorityInner, ScheduleInner, TaskInner, TimeEntryInner, User, Priority, Task, ScheduleTask, TimeEntry, Schedule, Notification, UserInner
 
 app = FastAPI()
 
 @app.on_event("startup")
 def on_startup():
     init_db()
-
-# Response annotation for API
-class Response(TypedDict, Generic[OutputModel]):
-    status: int
-    data: OutputModel
-
-# Generic function for creation object and addition in database
-def create_object(session: Session, input_model: InputModel, output_model: Type[OutputModel]) -> Response[OutputModel]:
-    output_instance = output_model.model_validate(input_model)
-    session.add(output_instance)
-    session.commit()
-    session.refresh(output_instance)
-    return {"status": 201, "data": output_instance}
-
-# Generic function for read object by id from database
-def read_object(session: Session, id: int, output_model: Type[OutputModel]) -> OutputModel:
-    output_instance = session.get(output_model, id)
-    if not output_instance:
-        raise HTTPException(status_code=404, detail=f"{output_model.__name__} not found")
-    return output_instance
-
-# Generic function for update object by id from database
-def update_object(session: Session, id: int, input_model: InputModel, output_model: Type[OutputModel]) -> InputModel:
-    output_instance = session.get(output_model, id)
-    if not output_instance:
-        raise HTTPException(status_code=404, detail=f"{output_model.__name__} not found")
-    output_data = input_model.model_dump(exclude_unset=True)
-    for key, value in output_data.items():
-        setattr(output_instance, key, value)
-    session.add(output_instance)
-    session.commit()
-    session.refresh(output_instance)
-    return output_instance
-
-# Generic function for delete object by id from database
-def delete_object(session: Session, id: int, output_model: Type[OutputModel]):
-    output_instance = session.get(output_model, id)
-    if not output_instance:
-        raise HTTPException(status_code=404, detail=f"{output_model.__name__} not found")
-    session.delete(output_instance)
-    session.commit()
-    return {"ok": True}
 
 # CRUD for User
 @app.post("/users")
@@ -61,7 +19,7 @@ def create_user(user: UserDefault, session=Depends(get_session)) -> Response[Use
 
 @app.get("/users")
 def get_users(session=Depends(get_session)) -> list[User]:
-    return session.exec(select(User)).all()
+    return read_object_list(session, User)
 
 @app.get("/users/{user_id}", response_model=UserInner)
 def get_user(user_id: int, session=Depends(get_session)) -> User:
@@ -75,13 +33,14 @@ def update_user(user_id: int, user: UserDefault, session=Depends(get_session)) -
 def delete_user(user_id: int, session=Depends(get_session)) -> dict:
     return delete_object(session, user_id, User)
 
+# CRUD for Priority
 @app.post("/priorities")
 def create_priority(priority: PriorityDefault, session=Depends(get_session)) -> Response[Priority]:
     return create_object(session, priority, Priority)
 
 @app.get("/priorities")
 def get_priorities(session=Depends(get_session)) -> list[Priority]:
-    return session.exec(select(Priority)).all()
+    return read_object_list(session, Priority)
 
 @app.get("/priorities/{priority_id}", response_model=PriorityInner)
 def get_priority(priority_id: int, session=Depends(get_session)) -> Priority:
@@ -102,7 +61,7 @@ def create_task(task: TaskDefault, session=Depends(get_session)) -> Response[Tas
 
 @app.get("/tasks")
 def get_tasks(session=Depends(get_session)) -> list[Task]:
-    return session.exec(select(Task)).all()
+    return read_object_list(session, Task)
 
 @app.get("/tasks/{task_id}", response_model=TaskInner)
 def get_task(task_id: int, session=Depends(get_session)) -> Task:
@@ -123,17 +82,17 @@ def create_time_entry(time_entry: TimeEntryDefault, session=Depends(get_session)
 
 @app.get("/time_entries")
 def get_time_entries(session=Depends(get_session)) -> list[TimeEntry]:
-    return session.exec(select(TimeEntry)).all()
+    return read_object_list(session, TimeEntry)
 
 @app.get("/time_entries/{time_entry_id}", response_model=TimeEntryInner)
 def get_time_entry(time_entry_id: int, session=Depends(get_session)) -> TimeEntry:
     return read_object(session, time_entry_id, TimeEntry)
 
-@app.patch("/time_entries/{time_entry_ider_id}")
+@app.patch("/time_entries/{ustime_entry_ider_id}")
 def update_time_entry(time_entry_id: int, time_entry: TimeEntryDefault, session=Depends(get_session)) -> TimeEntryDefault:
     return update_object(session, time_entry_id, time_entry, TimeEntry)
 
-@app.delete("/time_entries/{time_entry_ider_id}")
+@app.delete("/time_entries/{ustime_entry_ider_id}")
 def delete_time_entry(ustime_entry_ider_id: int, session=Depends(get_session)) -> dict:
     return delete_object(session, ustime_entry_ider_id, TimeEntry)
 
@@ -144,7 +103,7 @@ def create_schedule(schedule: ScheduleDefault, session=Depends(get_session)) -> 
 
 @app.get("/schedules")
 def get_schedules(session=Depends(get_session)) -> list[Schedule]:
-    return session.exec(select(Schedule)).all()
+    return read_object_list(session, Schedule)
 
 @app.get("/schedules/{schedule_id}", response_model=ScheduleInner)
 def get_schedule(schedule_id: int, session=Depends(get_session)) -> Schedule:
@@ -165,7 +124,7 @@ def create_notification(notification: NotificationDefault, session=Depends(get_s
 
 @app.get("/notifications")
 def get_notifications(session=Depends(get_session)) -> list[Notification]:
-    return session.exec(select(Notification)).all()
+    return read_object_list(session, Notification)
 
 @app.get("/notifications/{notification_id}", response_model=NotificationInner)
 def get_notification(notification_id: int, session=Depends(get_session)) -> Notification:
@@ -182,32 +141,16 @@ def delete_notification(notification_id: int, session=Depends(get_session)) -> d
 # CRUD for ScheduleTask
 @app.post("/schedule_tasks/{schedule_id}/{task_id}")
 def create_schedule_task(schedule_id: int, task_id: int, session=Depends(get_session)) -> Response[ScheduleTask]:
-    schedule = session.get(Schedule, schedule_id)
-    task = session.get(Task, task_id)
-    if not schedule or not task:
-        raise HTTPException(status_code=404, detail="Schedule or Task not found")
-    schedule_task = ScheduleTask(schedule_id=schedule_id, task_id=task_id)
-    session.add(schedule_task)
-    session.commit()
-    session.refresh(schedule_task)
-    return {"status": 201, "data": schedule_task}
+    return create_st(schedule_id, task_id, session)
 
 @app.get("/schedule_tasks")
 def get_schedule_tasks(session=Depends(get_session)) -> list[ScheduleTask]:
-    return session.exec(select(ScheduleTask)).all()
+    return read_object_list(session, ScheduleTask)
 
 @app.get("/schedule_tasks/{schedule_id}/{task_id}")
 def get_schedule_task(schedule_id: int, task_id: int, session=Depends(get_session)) -> ScheduleTask:
-    schedule_task = session.get(ScheduleTask, (schedule_id, task_id))
-    if not schedule_task:
-        raise HTTPException(status_code=404, detail="Pair Schedule and Task not found")
-    return schedule_task
+    return get_st(schedule_id, task_id, session)
 
 @app.delete("/schedule_tasks/{schedule_id}/{task_id}")
 def delete_schedule_task(schedule_id: int, task_id: int, session=Depends(get_session)) -> dict:
-    schedule_task = session.get(ScheduleTask, (schedule_id, task_id))
-    if not schedule_task:
-        raise HTTPException(status_code=404, detail="ScheduleTask not found")
-    session.delete(schedule_task)
-    session.commit()
-    return {"ok": True}
+    return delete_st(schedule_id, task_id, session)
