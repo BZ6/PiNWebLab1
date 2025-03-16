@@ -129,11 +129,11 @@ def get_time_entries(session=Depends(get_session)) -> list[TimeEntry]:
 def get_time_entry(time_entry_id: int, session=Depends(get_session)) -> TimeEntry:
     return read_object(session, time_entry_id, TimeEntry)
 
-@app.patch("/time_entries/{ustime_entry_ider_id}")
+@app.patch("/time_entries/{time_entry_ider_id}")
 def update_time_entry(time_entry_id: int, time_entry: TimeEntryDefault, session=Depends(get_session)) -> TimeEntryDefault:
     return update_object(session, time_entry_id, time_entry, TimeEntry)
 
-@app.delete("/time_entries/{ustime_entry_ider_id}")
+@app.delete("/time_entries/{time_entry_ider_id}")
 def delete_time_entry(ustime_entry_ider_id: int, session=Depends(get_session)) -> dict:
     return delete_object(session, ustime_entry_ider_id, TimeEntry)
 
