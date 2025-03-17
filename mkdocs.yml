@@ -1,0 +1,19 @@
+site_name: Shedule Documentation
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Database:
+    - Database Schema: db/database_schema.md
+    - Database model: db/database_model.md
+    - Database conecton: db/database_connection.md
+  - API:
+    - Generic functions: api/generic.md
+    - Users: api/users.md
+    - Priorities: api/priorities.md
+    - Tasks: api/tasks.md
+    - Time Entries: api/time_entries.md
+    - Schedules: api/schedules.md
+    - Notifications: api/notifications.md
+    - Schedule Tasks: api/schedule_tasks.md
