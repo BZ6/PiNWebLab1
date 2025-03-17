@@ -10,13 +10,13 @@ Create a new schedule task.
 
 **Method** : `POST`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `201 Created`
 
@@ -41,13 +41,13 @@ Retrieve a list of all schedule tasks.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -76,13 +76,13 @@ Retrieve a schedule task by schedule ID and task ID.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -104,13 +104,13 @@ Delete a schedule task by schedule ID and task ID.
 
 **Method** : `DELETE`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 

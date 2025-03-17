@@ -10,7 +10,7 @@ Create a new time entry.
 
 **Method** : `POST`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
@@ -31,7 +31,7 @@ Create a new time entry.
 }
 ```
 
-## Success Responses
+#### Success Responses
 
 **Code** : `201 Created`
 
@@ -58,13 +58,13 @@ Retrieve a list of all time entries.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -97,13 +97,13 @@ Retrieve a time entry by ID.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -127,7 +127,7 @@ Update a time entry by ID.
 
 **Method** : `PATCH`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
@@ -148,7 +148,7 @@ Update a time entry by ID.
 }
 ```
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -172,13 +172,13 @@ Delete a time entry by ID.
 
 **Method** : `DELETE`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 

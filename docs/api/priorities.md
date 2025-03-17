@@ -10,7 +10,7 @@ Create a new priority.
 
 **Method** : `POST`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
@@ -28,7 +28,7 @@ Create a new priority.
 }
 ```
 
-## Success Responses
+#### Success Responses
 
 **Code** : `201 Created`
 
@@ -52,13 +52,13 @@ Retrieve a list of all priorities.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -85,13 +85,13 @@ Retrieve a priority by ID.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -112,7 +112,7 @@ Update a priority by ID.
 
 **Method** : `PATCH`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
@@ -130,7 +130,7 @@ Update a priority by ID.
 }
 ```
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -151,13 +151,13 @@ Delete a priority by ID.
 
 **Method** : `DELETE`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 

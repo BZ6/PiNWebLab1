@@ -10,7 +10,7 @@ Create a new notification.
 
 **Method** : `POST`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
@@ -30,7 +30,7 @@ Create a new notification.
 }
 ```
 
-## Success Responses
+#### Success Responses
 
 **Code** : `201 Created`
 
@@ -56,13 +56,13 @@ Retrieve a list of all notifications.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -93,13 +93,13 @@ Retrieve a notification by ID.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -122,7 +122,7 @@ Update a notification by ID.
 
 **Method** : `PATCH`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
@@ -141,7 +141,7 @@ Update a notification by ID.
 }
 ```
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -164,13 +164,13 @@ Delete a notification by ID.
 
 **Method** : `DELETE`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 

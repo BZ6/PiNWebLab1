@@ -10,7 +10,7 @@ Create a new schedule.
 
 **Method** : `POST`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
@@ -29,7 +29,7 @@ Create a new schedule.
 }
 ```
 
-## Success Responses
+#### Success Responses
 
 **Code** : `201 Created`
 
@@ -54,13 +54,13 @@ Retrieve a list of all schedules.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -89,13 +89,13 @@ Retrieve a schedule by ID.
 
 **Method** : `GET`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -117,7 +117,7 @@ Update a schedule by ID.
 
 **Method** : `PATCH`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
@@ -136,7 +136,7 @@ Update a schedule by ID.
 }
 ```
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
@@ -158,13 +158,13 @@ Delete a schedule by ID.
 
 **Method** : `DELETE`
 
-**Auth required** : YES
+**Auth required** : NO
 
 **Permissions required** : None
 
 **Data constraints** : `{}`
 
-## Success Responses
+#### Success Responses
 
 **Code** : `200 OK`
 
