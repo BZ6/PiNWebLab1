@@ -31,7 +31,7 @@ class Priority(PriorityDefault, table=True):
 # Task table
 class TaskInner(TaskDefault):
     priority: Priority | None = None
-    user: list[User] | None = None
+    user: User | None = None
     time_entries: list["TimeEntry"] | None = None
     notifications: list["Notification"] | None = None
     schedules: list["Schedule"] | None = None
@@ -39,7 +39,7 @@ class TaskInner(TaskDefault):
 class Task(TaskDefault, table=True):
     id: int | None = Field(default=None, primary_key=True)
     priority: Priority | None = Relationship(back_populates="tasks")
-    user: list[User] = Relationship(back_populates="tasks")
+    user: User | None = Relationship(back_populates="tasks")
     time_entries: list["TimeEntry"] = Relationship(back_populates="task",
                                                    sa_relationship_kwargs={"cascade": "delete"})
     notifications: list["Notification"] = Relationship(back_populates="task",
