@@ -6,7 +6,7 @@ from sqlalchemy import pool
 from alembic import context
 from sqlmodel import SQLModel
 
-from models.models import *
+from src.db.models import *
 
 import os
 from dotenv import load_dotenv

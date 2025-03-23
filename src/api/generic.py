@@ -1,9 +1,12 @@
 # Response annotation for API
-from typing import Generic, Type, TypedDict
+from typing import Generic, Type, TypeVar, TypedDict
 from fastapi import HTTPException
-from sqlmodel import Session, select
+from sqlmodel import SQLModel, Session, select
 
-from models.default import InputModel, OutputModel
+
+# Define types for Generic
+InputModel = TypeVar('InputModel', bound=SQLModel)
+OutputModel = TypeVar('OutputModel', bound=SQLModel)
 
 # Response annotation for API
 class Response(TypedDict, Generic[OutputModel]):

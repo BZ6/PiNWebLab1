@@ -1,5 +1,5 @@
 import pytest
-from models.models import Schedule, ScheduleTask, Task
+from src.db.models import Schedule, ScheduleTask, Task
 
 def test_create_schedule_task(test_client, test_db_session):
     schedule_id = 1

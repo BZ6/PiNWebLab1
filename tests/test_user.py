@@ -1,5 +1,5 @@
 import pytest
-from models.models import User
+from src.db.models import User
 
 def test_create_user(test_client, test_db_session):
     response = test_client.post("/users", json={

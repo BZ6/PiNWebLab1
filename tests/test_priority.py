@@ -1,5 +1,5 @@
 import pytest
-from models.models import Priority
+from src.db.models import Priority
 
 def test_create_priority(test_client, test_db_session):
     response = test_client.post("/priorities", json={

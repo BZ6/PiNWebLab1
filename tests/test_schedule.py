@@ -1,5 +1,5 @@
 import pytest
-from models.models import Schedule, User
+from src.db.models import Schedule, User
 
 def test_create_schedule(test_client, test_db_session):
     user_id = 1

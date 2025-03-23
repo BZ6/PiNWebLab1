@@ -6,9 +6,10 @@ from sqlalchemy import StaticPool, create_engine
 from sqlalchemy.exc import OperationalError as SQLAlchemyOperationalError  
 from sqlalchemy.orm import sessionmaker
 from sqlmodel import SQLModel, Session
-from models.models import User, Priority, Task, ScheduleTask, TimeEntry, Schedule, Notification
-from main import app
-from connection import get_session
+
+from src.db.models import User, Priority, Task, ScheduleTask, TimeEntry, Schedule, Notification
+from src.main import app
+from src.db.connection import get_session
 
 load_dotenv()
 test_db_url = os.getenv('DB_TEST')

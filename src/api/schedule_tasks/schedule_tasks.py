@@ -1,8 +1,8 @@
 from fastapi import HTTPException
 from sqlmodel import Session
 
-from api.generic import Response
-from models.models import Schedule, ScheduleTask, Task
+from src.api.generic import Response
+from src.db.models import Schedule, ScheduleTask, Task
 
 def create_st(schedule_id: int, task_id: int, session: Session) -> Response[ScheduleTask]:
     schedule = session.get(Schedule, schedule_id)

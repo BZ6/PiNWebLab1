@@ -1,5 +1,5 @@
 import pytest
-from models.models import Notification, Task
+from src.db.models import Notification, Task
 
 def test_create_notification(test_client, test_db_session):
     task_id = 1

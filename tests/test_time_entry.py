@@ -1,5 +1,5 @@
 import pytest
-from models.models import Task, TimeEntry
+from src.db.models import Task, TimeEntry
 
 def test_create_time_entry(test_client, test_db_session):
     task_id = 1

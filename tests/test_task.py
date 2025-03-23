@@ -1,5 +1,5 @@
 import pytest
-from models.models import Priority, Task, User
+from src.db.models import Priority, Task, User
 
 def test_create_task(test_client, test_db_session):
     user_id = 1
