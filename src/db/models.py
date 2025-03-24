@@ -17,6 +17,7 @@ class ScheduleTask(ScheduleTaskDefault, table=True):
 # User table
 class User(UserDefault, table=True):
     id: int | None = Field(default=None, primary_key=True)
+    password_hash: str | None = None
     tasks: list["Task"] = Relationship(back_populates="user",
                                        sa_relationship_kwargs={"cascade": "delete"})
     schedules: list["Schedule"] = Relationship(back_populates="user",

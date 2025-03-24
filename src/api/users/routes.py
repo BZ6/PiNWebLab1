@@ -6,8 +6,13 @@ from src.api.users.schemas import UserInner
 from src.db.connection import get_session
 from src.db.models import User
 
+from src.api.users.me import routes as me
+
 
 router = APIRouter(prefix="/users", tags=["users"])
+
+
+router.include_router(me.router)
 
 
 # CRUD for User

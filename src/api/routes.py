@@ -1,7 +1,5 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
 
-from src.api.generic import Response, create_object, delete_object, read_object, read_object_list, update_object
-from src.db.connection import get_session
 from src.api.users import routes as users
 from src.api.priorities import routes as priorities
 from src.api.notifications import routes as notifications
