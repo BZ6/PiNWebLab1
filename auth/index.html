@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../tasks/">
+        <link rel="prev" href="../tests/">
       
       
-        <link rel="next" href="../schedules/">
+        <link rel="next" href="../db/database_schema/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>Time Entries - Shedule Documentation</title>
+        <title>Auth - Shedule Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
       
       
 
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#time-entries-api" class="md-skip">
+        <a href="#authentication-module" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Shedule Documentation" class="md-header__button md-logo" aria-label="Shedule Documentation" data-md-component="logo">
+    <a href=".." title="Shedule Documentation" class="md-header__button md-logo" aria-label="Shedule Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Time Entries
+              Auth
             
           </span>
         </div>
@@ -173,7 +173,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Shedule Documentation" class="md-nav__button md-logo" aria-label="Shedule Documentation" data-md-component="logo">
+    <a href=".." title="Shedule Documentation" class="md-nav__button md-logo" aria-label="Shedule Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -191,7 +191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -212,7 +212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -233,7 +233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tests/" class="md-nav__link">
+      <a href="../tests/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -251,10 +251,31 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../auth/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Auth
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -264,6 +285,110 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_password_hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_password_hash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify_password" class="md-nav__link">
+    <span class="md-ellipsis">
+      verify_password
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_access_token" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_access_token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decode_token" class="md-nav__link">
+    <span class="md-ellipsis">
+      decode_token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tokenbearer" class="md-nav__link">
+    <span class="md-ellipsis">
+      TokenBearer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accesstokenbearer" class="md-nav__link">
+    <span class="md-ellipsis">
+      AccessTokenBearer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -311,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../db/database_schema/" class="md-nav__link">
+      <a href="../db/database_schema/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -333,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../db/database_connection/" class="md-nav__link">
+      <a href="../db/database_connection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -359,19 +484,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -386,7 +509,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             API
@@ -400,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../generic/" class="md-nav__link">
+      <a href="../api/generic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -422,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../users/" class="md-nav__link">
+      <a href="../api/users/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -444,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../users/me/" class="md-nav__link">
+      <a href="../api/users/me/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -466,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../priorities/" class="md-nav__link">
+      <a href="../api/priorities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -488,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tasks/" class="md-nav__link">
+      <a href="../api/tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -507,31 +630,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Time Entries
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../api/time_entries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,161 +643,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      Endpoints
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Endpoints">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-time-entry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create Time Entry
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Create Time Entry">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-responses" class="md-nav__link">
-    <span class="md-ellipsis">
-      Success Responses
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-time-entries" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get Time Entries
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Get Time Entries">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-responses_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Success Responses
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-time-entry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Get Time Entry
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Get Time Entry">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-responses_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Success Responses
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-time-entry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update Time Entry
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Update Time Entry">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-responses_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Success Responses
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete-time-entry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Delete Time Entry
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Delete Time Entry">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-responses_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      Success Responses
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -708,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schedules/" class="md-nav__link">
+      <a href="../api/schedules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -730,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../notifications/" class="md-nav__link">
+      <a href="../api/notifications/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schedule_tasks/" class="md-nav__link">
+      <a href="../api/schedule_tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -801,29 +748,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#endpoints" class="md-nav__link">
+  <a href="#functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Endpoints
+      Functions
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Endpoints">
+    <nav class="md-nav" aria-label="Functions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-time-entry" class="md-nav__link">
+  <a href="#get_password_hash" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Time Entry
+      get_password_hash
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Create Time Entry">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#success-responses" class="md-nav__link">
+  <a href="#verify_password" class="md-nav__link">
     <span class="md-ellipsis">
-      Success Responses
+      verify_password
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_access_token" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_access_token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decode_token" class="md-nav__link">
+    <span class="md-ellipsis">
+      decode_token
     </span>
   </a>
   
@@ -833,100 +797,32 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#get-time-entries" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      Get Time Entries
+      Dependencies
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Get Time Entries">
+    <nav class="md-nav" aria-label="Dependencies">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#success-responses_1" class="md-nav__link">
+  <a href="#tokenbearer" class="md-nav__link">
     <span class="md-ellipsis">
-      Success Responses
+      TokenBearer
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-time-entry" class="md-nav__link">
+  <a href="#accesstokenbearer" class="md-nav__link">
     <span class="md-ellipsis">
-      Get Time Entry
+      AccessTokenBearer
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Get Time Entry">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-responses_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Success Responses
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-time-entry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update Time Entry
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Update Time Entry">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-responses_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Success Responses
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete-time-entry" class="md-nav__link">
-    <span class="md-ellipsis">
-      Delete Time Entry
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Delete Time Entry">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#success-responses_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      Success Responses
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -951,130 +847,62 @@
 
 
 
-<h1 id="time-entries-api">Time Entries API</h1>
-<h2 id="endpoints">Endpoints</h2>
-<h3 id="create-time-entry">Create Time Entry</h3>
-<p>Create a new time entry.</p>
-<p><strong>URL</strong> : <code>/time_entries</code></p>
-<p><strong>Method</strong> : <code>POST</code></p>
-<p><strong>Auth required</strong> : NO</p>
-<p><strong>Permissions required</strong> : None</p>
-<p><strong>Data constraints</strong> : <code>{}</code></p>
-<p><strong>Request Body:</strong></p>
+<h1 id="authentication-module">Authentication Module</h1>
+<p>This module provides functions for password hashing, token creation, and token decoding.</p>
+<h2 id="functions">Functions</h2>
+<h3 id="get_password_hash"><code>get_password_hash</code></h3>
+<p>Hashes a plaintext password using bcrypt.</p>
 <ul>
-<li><code>TimeEntryDefault</code>: Object containing time entry details.</li>
+<li><strong>Parameters:</strong></li>
+<li><code>password</code> (str): The plaintext password to hash.</li>
+<li><strong>Returns:</strong></li>
+<li><code>str</code>: The hashed password.</li>
 </ul>
-<p><strong>Request Example:</strong></p>
-<pre><code class="language-json">{
-  &quot;task_id&quot;: 1,
-  &quot;start_time&quot;: &quot;2023-10-01T09:00:00&quot;,
-  &quot;end_time&quot;: &quot;2023-10-01T17:00:00&quot;,
-  &quot;duration&quot;: 480
-}
-</code></pre>
-<h4 id="success-responses">Success Responses</h4>
-<p><strong>Code</strong> : <code>201 Created</code></p>
-<p><strong>Content</strong> : <code>{}</code></p>
-<pre><code class="language-json">{
-  &quot;status&quot;: 201,
-  &quot;data&quot;: {
-    &quot;id&quot;: 1,
-    &quot;task_id&quot;: 1,
-    &quot;start_time&quot;: &quot;2023-10-01T09:00:00&quot;,
-    &quot;end_time&quot;: &quot;2023-10-01T17:00:00&quot;,
-    &quot;duration&quot;: 480
-  }
-}
-</code></pre>
-<h3 id="get-time-entries">Get Time Entries</h3>
-<p>Retrieve a list of all time entries.</p>
-<p><strong>URL</strong> : <code>/time_entries</code></p>
-<p><strong>Method</strong> : <code>GET</code></p>
-<p><strong>Auth required</strong> : NO</p>
-<p><strong>Permissions required</strong> : None</p>
-<p><strong>Data constraints</strong> : <code>{}</code></p>
-<h4 id="success-responses_1">Success Responses</h4>
-<p><strong>Code</strong> : <code>200 OK</code></p>
-<p><strong>Content</strong> : <code>{[]}</code></p>
-<pre><code class="language-json">[
-  {
-    &quot;id&quot;: 1,
-    &quot;task_id&quot;: 1,
-    &quot;start_time&quot;: &quot;2023-10-01T09:00:00&quot;,
-    &quot;end_time&quot;: &quot;2023-10-01T17:00:00&quot;,
-    &quot;duration&quot;: 480
-  },
-  {
-    &quot;id&quot;: 2,
-    &quot;task_id&quot;: 2,
-    &quot;start_time&quot;: &quot;2023-10-02T09:00:00&quot;,
-    &quot;end_time&quot;: &quot;2023-10-02T17:00:00&quot;,
-    &quot;duration&quot;: 480
-  }
-]
-</code></pre>
-<h3 id="get-time-entry">Get Time Entry</h3>
-<p>Retrieve a time entry by ID.</p>
-<p><strong>URL</strong> : <code>/time_entries/{time_entry_id}</code></p>
-<p><strong>Method</strong> : <code>GET</code></p>
-<p><strong>Auth required</strong> : NO</p>
-<p><strong>Permissions required</strong> : None</p>
-<p><strong>Data constraints</strong> : <code>{}</code></p>
-<h4 id="success-responses_2">Success Responses</h4>
-<p><strong>Code</strong> : <code>200 OK</code></p>
-<p><strong>Content</strong> : <code>{}</code></p>
-<pre><code class="language-json">{
-  &quot;id&quot;: 1,
-  &quot;task_id&quot;: 1,
-  &quot;start_time&quot;: &quot;2023-10-01T09:00:00&quot;,
-  &quot;end_time&quot;: &quot;2023-10-01T17:00:00&quot;,
-  &quot;duration&quot;: 480
-}
-</code></pre>
-<h3 id="update-time-entry">Update Time Entry</h3>
-<p>Update a time entry by ID.</p>
-<p><strong>URL</strong> : <code>/time_entries/{time_entry_id}</code></p>
-<p><strong>Method</strong> : <code>PATCH</code></p>
-<p><strong>Auth required</strong> : NO</p>
-<p><strong>Permissions required</strong> : None</p>
-<p><strong>Data constraints</strong> : <code>{}</code></p>
-<p><strong>Request Body:</strong></p>
+<h3 id="verify_password"><code>verify_password</code></h3>
+<p>Verifies a plaintext password against a hashed password.</p>
 <ul>
-<li><code>TimeEntryDefault</code>: Object containing updated time entry details.</li>
+<li><strong>Parameters:</strong></li>
+<li><code>plain_password</code> (str): The plaintext password to verify.</li>
+<li><code>hashed_password</code> (str): The hashed password to verify against.</li>
+<li><strong>Returns:</strong></li>
+<li><code>bool</code>: <code>True</code> if the passwords match, <code>False</code> otherwise.</li>
 </ul>
-<p><strong>Request Example:</strong></p>
-<pre><code class="language-json">{
-  &quot;task_id&quot;: 1,
-  &quot;start_time&quot;: &quot;2023-10-01T09:00:00&quot;,
-  &quot;end_time&quot;: &quot;2023-10-01T17:00:00&quot;,
-  &quot;duration&quot;: 480
-}
-</code></pre>
-<h4 id="success-responses_3">Success Responses</h4>
-<p><strong>Code</strong> : <code>200 OK</code></p>
-<p><strong>Content</strong> : <code>{}</code></p>
-<pre><code class="language-json">{
-  &quot;id&quot;: 1,
-  &quot;task_id&quot;: 1,
-  &quot;start_time&quot;: &quot;2023-10-01T09:00:00&quot;,
-  &quot;end_time&quot;: &quot;2023-10-01T17:00:00&quot;,
-  &quot;duration&quot;: 480
-}
-</code></pre>
-<h3 id="delete-time-entry">Delete Time Entry</h3>
-<p>Delete a time entry by ID.</p>
-<p><strong>URL</strong> : <code>/time_entries/{time_entry_id}</code></p>
-<p><strong>Method</strong> : <code>DELETE</code></p>
-<p><strong>Auth required</strong> : NO</p>
-<p><strong>Permissions required</strong> : None</p>
-<p><strong>Data constraints</strong> : <code>{}</code></p>
-<h4 id="success-responses_4">Success Responses</h4>
-<p><strong>Code</strong> : <code>200 OK</code></p>
-<p><strong>Content</strong> : <code>{}</code></p>
-<pre><code class="language-json">{
-  &quot;ok&quot;: true
-}
-</code></pre>
+<h3 id="create_access_token"><code>create_access_token</code></h3>
+<p>Creates a JWT access token.</p>
+<ul>
+<li><strong>Parameters:</strong></li>
+<li><code>data</code> (str): The data to include in the token payload.</li>
+<li><code>expiry</code> (timedelta, optional): The token expiry time. Defaults to 60 minutes.</li>
+<li><code>refresh</code> (bool, optional): Whether the token is a refresh token. Defaults to <code>False</code>.</li>
+<li><strong>Returns:</strong></li>
+<li><code>str</code>: The encoded JWT token.</li>
+</ul>
+<h3 id="decode_token"><code>decode_token</code></h3>
+<p>Decodes a JWT token and returns its payload.</p>
+<ul>
+<li><strong>Parameters:</strong></li>
+<li><code>token</code> (str): The JWT token to decode.</li>
+<li><strong>Returns:</strong></li>
+<li><code>dict</code>: The token payload.</li>
+<li><strong>Raises:</strong></li>
+<li><code>HTTPException</code>: If the token is expired, invalid, or not yet valid.</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<p>The <code>dependencies.py</code> file provides classes for token validation and verification.</p>
+<h3 id="tokenbearer"><code>TokenBearer</code></h3>
+<p>A base class for token validation.</p>
+<ul>
+<li><strong>Methods:</strong></li>
+<li><code>__call__</code>: Validates the token from the request header.</li>
+<li><code>token_valid</code>: Checks if the token is valid.</li>
+<li><code>verify_token_data</code>: Abstract method to be overridden in child classes.</li>
+</ul>
+<h3 id="accesstokenbearer"><code>AccessTokenBearer</code></h3>
+<p>A class for access token validation.</p>
+<ul>
+<li><strong>Methods:</strong></li>
+<li><code>verify_token_data</code>: Verifies the token data.</li>
+</ul>
 
 
 
@@ -1121,10 +949,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
