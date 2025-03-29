@@ -4,6 +4,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from src.auth.auth import decode_token
 
 
+# Class for token
 class TokenBearer(HTTPBearer):
     async def __call__(self, request: Request) -> HTTPAuthorizationCredentials | None:
         creds = await super().__call__(request)
@@ -23,6 +24,7 @@ class TokenBearer(HTTPBearer):
         raise NotImplementedError("Please Override this method in child classes")
 
 
+# Class for access token
 class AccessTokenBearer(TokenBearer):
     def verify_token_data(self, token_data: dict) -> None:
         if token_data:

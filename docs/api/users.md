@@ -2,6 +2,8 @@
 
 ## Endpoints
 
+- [Me API](users/me.md)
+
 ### Create User
 
 Create a new user.

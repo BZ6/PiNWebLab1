@@ -13,16 +13,52 @@ router = APIRouter(prefix="/me", tags=["me"])
 # Auth for User
 @router.post("/register")
 def register_user(user: UserCreate, session=Depends(get_session)) -> Response[UserJWTResponse]:
+    """
+    Register a user.
+    
+    - **user**: UserCreate object containing user creation details.
+    - **session**: Database session dependency.
+
+    Returns:
+        Response[UserJWTResponse]: The user response with optional access token.
+    """    
     return create_user(user, session)
 
 @router.post("/login")
 def login_user(user: UserLogin, session=Depends(get_session)) -> Response[UserJWTResponse]:
+    """
+    Login user.
+    
+    - **user**: UserLogin object containing user login details.
+    - **session**: Database session dependency.
+
+    Returns:
+        Response[UserJWTResponse]: The user response with optional access token
+    """    
     return enter_into_user(user, session)
 
 @router.post("/password")
 def password_user(user: UserLogin, session=Depends(get_session)) -> Response[UserJWTResponse]:
+    """
+    Reset password user.
+    
+    - **user**: UserLogin object containing user login details.
+    - **session**: Database session dependency.
+
+    Returns:
+        Response[UserJWTResponse]: The user response with optional access token
+    """     
     return reset_password_user(user, session)
 
 @router.get("/")
 def get_info_current_user(token=Depends(AccessTokenBearer()), session=Depends(get_session)) -> Response[UserResponse]:
+    """
+    Get information about current user.
+    
+    - **token**: Access token dependency.
+    - **session**: Database session dependency.
+
+    Returns:
+        Response[UserResponse]: The user response
+    """   
     return info_user(token['sub'], session)

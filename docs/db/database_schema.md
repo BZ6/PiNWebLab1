@@ -3,8 +3,11 @@
 ## User
 
 - `id`: Integer, Primary Key
+- `first_name`: String
+- `last_name`: String
 - `username`: String
 - `email`: String
+- `password_hash`: String
 
 ## Priority
 

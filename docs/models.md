@@ -7,6 +7,8 @@
 
 ## UserDefault
 
+- `first_name`: String
+- `last_name`: String
 - `username`: String
 - `email`: String
 
@@ -42,7 +44,10 @@
 ## User
 
 - `id`: Primary key
+- `first_name`: String
+- `last_name`: String
 - `username`: String
+- `password_hash`: String
 - `email`: String
 - `tasks`: Relationship with Task
 - `schedules`: Relationship with Schedule
@@ -53,6 +58,35 @@
 - `email`: String
 - `tasks`: List of Task
 - `schedules`: List of Schedule
+
+## UserCreate
+
+- `first_name`: String
+- `last_name`: String
+- `username`: String
+- `email`: String
+- `password`: String
+
+## UserLogin
+
+- `username`: String
+- `password`: String
+
+## UserJWTResponse
+
+- `first_name`: String
+- `last_name`: String
+- `username`: String
+- `email`: String
+- `password`: String
+- `access_token`: String
+
+## UserResponse
+
+- `first_name`: String
+- `last_name`: String
+- `username`: String
+- `email`: String
 
 ## Priority
 

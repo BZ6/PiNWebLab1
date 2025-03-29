@@ -7,7 +7,7 @@ from src.api.users.me.schemas import UserJWTResponse, UserResponse
 from src.auth.auth import create_access_token, get_password_hash, verify_password
 from src.db.models import User
 
-
+# Function for getting an item from the database by username
 def get_user_by_username(username: str, session: Session) -> User:
     statement = select(User).where(User.username == username)
     result = session.exec(statement)
@@ -15,6 +15,7 @@ def get_user_by_username(username: str, session: Session) -> User:
 
     return user
 
+# Function for verify password by username
 def verify_password_by_username(password: str, username: str, session: Session) -> bool:
     user = get_user_by_username(username, session)
 
@@ -23,6 +24,7 @@ def verify_password_by_username(password: str, username: str, session: Session) 
 
     return verify_password(password, user.password_hash)
 
+# Function for creation user and addition in database
 def create_user(user_data: UserCreate, session: Session) -> Response[UserJWTResponse]:
         user_data_dict = user_data.model_dump()
 
@@ -44,6 +46,7 @@ def create_user(user_data: UserCreate, session: Session) -> Response[UserJWTResp
 
         return {"status": 201, "data": user_response}
 
+# Function for resetting password for user
 def reset_password_user(user_data: UserLogin, session: Session) -> Response[UserJWTResponse]:
         user_data_dict = user_data.model_dump()
 
@@ -69,6 +72,7 @@ def reset_password_user(user_data: UserLogin, session: Session) -> Response[User
 
         return {"status": 201, "data": user_response}
 
+# Function for login user and creating access token
 def enter_into_user(user_data: UserLogin, session: Session) -> Response[UserJWTResponse]:
         user_data_dict = user_data.model_dump()
 
@@ -89,9 +93,10 @@ def enter_into_user(user_data: UserLogin, session: Session) -> Response[UserJWTR
         
         return {"status": 201, "data": user_response}
 
+# Function for getting information about current user
 def info_user(username: str, session: Session) -> Response[UserResponse]:
     user = get_user_by_username(username, session)
     user_data_dict = user.model_dump()
     user_response = UserResponse(**user_data_dict)
 
-    return {"status": 201, "data": user_response}
+    return {"status": 200, "data": user_response}

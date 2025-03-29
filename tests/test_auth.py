@@ -43,7 +43,7 @@ def test_get_info_current_user(test_client, test_db_session):
 
     response = test_client.get("/users/me/", headers={"Authorization": f"Bearer {token}"})
     
-    assert response.json()["status"] == 201
+    assert response.json()["status"] == 200
     assert response.json()["data"]["username"] == test_data["username"]
     assert response.json()["data"]["email"] == test_data["email"]
 

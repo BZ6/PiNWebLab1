@@ -12,12 +12,15 @@ jwt_algorithm = os.getenv('JWT_ALGORITHM')
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
+# Function for hashing password
 def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
 
+# Function for verify password with hashed password
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
+# Function for creating access token
 def create_access_token(data: str , expiry:timedelta = None, refresh: bool = False) -> str:
     payload = {
         'sub': data,
@@ -33,6 +36,7 @@ def create_access_token(data: str , expiry:timedelta = None, refresh: bool = Fal
 
     return token
 
+# Function for decoding access token
 def decode_token(token: str) -> dict:
     try:
         print(f"Decoding token: {token}")

@@ -4,13 +4,16 @@ theme:
 
 nav:
   - Home: index.md
+  - Models: models.md
+  - Tests: tests.md
+  - Auth: auth.md
   - Database:
     - Database Schema: db/database_schema.md
-    - Database model: db/database_model.md
     - Database conecton: db/database_connection.md
   - API:
     - Generic functions: api/generic.md
     - Users: api/users.md
+    - Auth users: api/users/me.md
     - Priorities: api/priorities.md
     - Tasks: api/tasks.md
     - Time Entries: api/time_entries.md
